@@ -1,0 +1,4 @@
+cmake --build . -- -v
+Error: could not load cache
+Build complete (1 errors, 0 warnings): D:\Embedded System Volume\Esp_IDF_workspace\blink\build
+Total time taken to build the project: 234 ms

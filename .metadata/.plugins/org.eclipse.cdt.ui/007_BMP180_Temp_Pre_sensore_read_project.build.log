@@ -1,0 +1,36 @@
+cmake --build . -- -v
+[0/1] C:\Espressif\tools\cmake\3.30.2\bin\cmake.exe --regenerate-during-build -S"D:\Embedded System Volume\Esp_IDF_workspace\007_BMP180_Temp_Pre_sensore_read_project" -B"D:\Embedded System Volume\Esp_IDF_workspace\007_BMP180_Temp_Pre_sensore_read_project\build"
+-- Could NOT find Git (missing: GIT_EXECUTABLE) 
+Hint: The project() command has not yet been called.  It sets up system-specific search paths.
+CMake Warning at C:/Espressif/frameworks/esp-idf-v5.5/tools/cmake/git_submodules.cmake:4 (message):
+  Git executable was not found.  Git submodule checks will not be executed.
+  If you have any build issues at all, start by adding git executable to the
+  PATH and rerun cmake to not see this warning again.
+Call Stack (most recent call first):
+  C:/Espressif/frameworks/esp-idf-v5.5/tools/cmake/idf.cmake:41 (include)
+  C:/Espressif/frameworks/esp-idf-v5.5/tools/cmake/project.cmake:29 (include)
+  CMakeLists.txt:5 (include)
+
+
+-- git rev-parse returned ''
+-- Minimal build - OFF
+-- ccache will be used for faster recompilation
+-- git rev-parse returned ''
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32
+CMake Error at C:/Espressif/frameworks/esp-idf-v5.5/tools/cmake/build.cmake:328 (message):
+  Failed to resolve component 'i2cdev' required by component 'main': unknown
+  name.
+Call Stack (most recent call first):
+  C:/Espressif/frameworks/esp-idf-v5.5/tools/cmake/build.cmake:371 (__build_resolve_and_add_req)
+  C:/Espressif/frameworks/esp-idf-v5.5/tools/cmake/build.cmake:685 (__build_expand_requirements)
+  C:/Espressif/frameworks/esp-idf-v5.5/tools/cmake/project.cmake:740 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+-- Configuring incomplete, errors occurred!
+ninja: error: rebuilding 'build.ninja': subcommand failed
+FAILED: build.ninja 
+C:\Espressif\tools\cmake\3.30.2\bin\cmake.exe --regenerate-during-build -S"D:\Embedded System Volume\Esp_IDF_workspace\007_BMP180_Temp_Pre_sensore_read_project" -B"D:\Embedded System Volume\Esp_IDF_workspace\007_BMP180_Temp_Pre_sensore_read_project\build"
+Build complete (1 errors, 0 warnings): D:\Embedded System Volume\Esp_IDF_workspace\007_BMP180_Temp_Pre_sensore_read_project\build
+Total time taken to build the project: 6,862 ms

@@ -1,0 +1,3 @@
+CompileFlags:
+  CompilationDatabase: D:\Embedded System Volume\Esp_IDF_workspace\005_Wifi_Connect_project\build
+  Remove: [-m*, -f*]

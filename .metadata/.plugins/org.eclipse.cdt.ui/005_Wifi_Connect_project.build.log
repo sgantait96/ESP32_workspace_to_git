@@ -1,0 +1,22 @@
+                            Memory Type Usage Summary                             
++--------------------------------------------------------------------------------+
+| Memory Type/Section | Used [bytes] | Used [%] | Remain [bytes] | Total [bytes] |
+|---------------------+--------------+----------+----------------+---------------|
+| Flash Code          |       548406 |          |                |               |
+|    .text            |       548406 |          |                |               |
+| DIRAM               |       110079 |    32.21 |         231681 |        341760 |
+|    .text            |        75507 |    22.09 |                |               |
+|    .data            |        18964 |     5.55 |                |               |
+|    .bss             |        15608 |     4.57 |                |               |
+| Flash Data          |       107000 |          |                |               |
+|    .rodata          |       106744 |          |                |               |
+|    .appdesc         |          256 |          |                |               |
+| IRAM                |        16384 |    100.0 |              0 |         16384 |
+|    .text            |        15356 |    93.73 |                |               |
+|    .vectors         |         1028 |     6.27 |                |               |
+| RTC FAST            |           56 |     0.68 |           8136 |          8192 |
+|    .force_fast      |           32 |     0.39 |                |               |
+|    .rtc_reserved    |           24 |     0.29 |                |               |
++--------------------------------------------------------------------------------+
+C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5\components\partition_table\gen_esp32part.py D:\Embedded System Volume\Esp_IDF_workspace\005_Wifi_Connect_project\build\partition_table\partition-table.bin
+Total time taken to build the project: 80,439 ms

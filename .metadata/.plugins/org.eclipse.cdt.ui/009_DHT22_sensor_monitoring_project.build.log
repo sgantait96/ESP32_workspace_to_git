@@ -1,0 +1,22 @@
+                            Memory Type Usage Summary                             
++--------------------------------------------------------------------------------+
+| Memory Type/Section | Used [bytes] | Used [%] | Remain [bytes] | Total [bytes] |
+|---------------------+--------------+----------+----------------+---------------|
+| Flash Code          |       591958 |          |                |               |
+|    .text            |       591958 |          |                |               |
+| Flash Data          |       407536 |          |                |               |
+|    .rodata          |       407280 |          |                |               |
+|    .appdesc         |          256 |          |                |               |
+| DIRAM               |       110655 |    32.38 |         231105 |        341760 |
+|    .text            |        76035 |    22.25 |                |               |
+|    .data            |        18980 |     5.55 |                |               |
+|    .bss             |        15640 |     4.58 |                |               |
+| IRAM                |        16384 |    100.0 |              0 |         16384 |
+|    .text            |        15356 |    93.73 |                |               |
+|    .vectors         |         1028 |     6.27 |                |               |
+| RTC FAST            |           56 |     0.68 |           8136 |          8192 |
+|    .force_fast      |           32 |     0.39 |                |               |
+|    .rtc_reserved    |           24 |     0.29 |                |               |
++--------------------------------------------------------------------------------+
+C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5\components\partition_table\gen_esp32part.py D:\Embedded System Volume\Esp_IDF_workspace\009_DHT22_sensor_monitoring_project\build\partition_table\partition-table.bin
+Total time taken to build the project: 896 ms

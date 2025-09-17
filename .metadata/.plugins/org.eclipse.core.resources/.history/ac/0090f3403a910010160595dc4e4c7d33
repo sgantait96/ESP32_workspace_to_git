@@ -1,0 +1,23 @@
+# pack-refs with: peeled fully-peeled sorted 
+b92a0149145a759ae7ad1d6d7095524adc747fbc refs/remotes/origin/chore/release-5.2
+c52b10cdf2003e10985531abd7806b94b5d8971a refs/remotes/origin/feature/devtool-manifest
+e82d88daaf8ac764718f30d21811213b431c392d refs/remotes/origin/master
+7f1286a8c134fdb5601b9e5268ca7dd9518c093f refs/remotes/origin/ssd1306
+18afd7e2c0191cb3f82cb25ce641adea00ffbf26 refs/tags/0.5-alpha
+4f9c9c427c6191e8ed3b81f9c0f3e7907df51136 refs/tags/0.5-beta
+ea4d9fb05dd353729cd58bb02792266e4f585b67 refs/tags/0.6
+a7e9b8a511c3466f3fe6753d9e6bff978106c2bf refs/tags/0.6.1
+6ca0399f4f98d526d0eeff8bf7d86d5fec3e9f50 refs/tags/0.6.2
+31620162d78a8310110ecb228087a9830c72f3af refs/tags/0.7
+020b9cffe64e9660c015d1886b32ae4d2fbe1a82 refs/tags/0.7.1
+10b5079f424c523ad69a578c71c1e8a7c68d2ccd refs/tags/0.7.2
+e62a6729bec16129b7a5deb2525fab73ffe808dc refs/tags/0.7.3
+cc7b33d0edfbc5e1514c94f416c17662bebf808e refs/tags/0.8.0
+fc05aa808dad25649586f8a34ca79705fac4304d refs/tags/0.8.1
+c5bc69dc85cd3071ff01e026a40ec3cf0465f67c refs/tags/0.8.2
+ccdacdddf9a64fac9b5b9b7c5bf6674a339e2588 refs/tags/0.8.3
+2f3a4c8751a96500f8ccc8303b23b1ce93b0259a refs/tags/0.9.0
+15460197470beede523b6ac04ab2258a2b4297b5 refs/tags/0.9.1
+0b8a3a55802d367d7865af0bcbca9ac3cb993bdf refs/tags/0.9.2
+fd832600d76b65e62d07dfcbc15c32bab91c816e refs/tags/0.9.3
+e8fff9a2d638ce08716b69fa66382bbfa0bfffdf refs/tags/0.9.4

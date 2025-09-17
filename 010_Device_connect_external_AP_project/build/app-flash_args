@@ -1,0 +1,2 @@
+--flash_mode dio --flash_freq 80m --flash_size 8MB
+0x20000 010_Device_connect_external_AP_project.bin

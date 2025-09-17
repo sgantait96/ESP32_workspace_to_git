@@ -1,0 +1,3 @@
+CompileFlags:
+  CompilationDatabase: D:\Embedded System Volume\Esp_IDF_workspace\004_RGB_Led_status_Indication_2.0\build
+  Remove: [-m*, -f*]

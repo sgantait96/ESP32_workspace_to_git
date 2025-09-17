@@ -1,0 +1,6 @@
+source "C:/Espressif/frameworks/esp-idf-v5.3.1/components/bootloader/Kconfig.projbuild"
+source "C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_app_format/Kconfig.projbuild"
+source "C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_rom/Kconfig.projbuild"
+source "C:/Espressif/frameworks/esp-idf-v5.3.1/components/esptool_py/Kconfig.projbuild"
+source "C:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/Kconfig.projbuild"
+source "D:/Embedded System Volume/Esp_IDF_workspace/001_RGB_Led_status_indication_A/main/Kconfig.projbuild"

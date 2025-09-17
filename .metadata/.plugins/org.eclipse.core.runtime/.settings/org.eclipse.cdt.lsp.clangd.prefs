@@ -1,0 +1,4 @@
+additional_options=--compile-commands-dir\=D\:\\Embedded System Volume\\Esp_IDF_workspace\\012_OLED_128x64_Test_project\\build
+clangd_path=C\:\\Espressif\\tools\\esp-clang\\esp-19.1.2_20250312\\esp-clang\\bin\\clangd.exe
+eclipse.preferences.version=1
+query_driver=C\:\\Espressif\\tools\\xtensa-esp-elf\\esp-14.2.0_20241119\\xtensa-esp-elf\\bin\\xtensa-esp32s3-elf-gcc.exe

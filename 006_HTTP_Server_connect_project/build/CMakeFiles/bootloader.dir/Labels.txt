@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+D:/Embedded_System_Volume/Esp_IDF_workspace/006_HTTP_Server_connect_project/build/CMakeFiles/bootloader
+D:/Embedded_System_Volume/Esp_IDF_workspace/006_HTTP_Server_connect_project/build/CMakeFiles/bootloader.rule
+D:/Embedded_System_Volume/Esp_IDF_workspace/006_HTTP_Server_connect_project/build/CMakeFiles/bootloader-complete.rule
+D:/Embedded_System_Volume/Esp_IDF_workspace/006_HTTP_Server_connect_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+D:/Embedded_System_Volume/Esp_IDF_workspace/006_HTTP_Server_connect_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+D:/Embedded_System_Volume/Esp_IDF_workspace/006_HTTP_Server_connect_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+D:/Embedded_System_Volume/Esp_IDF_workspace/006_HTTP_Server_connect_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+D:/Embedded_System_Volume/Esp_IDF_workspace/006_HTTP_Server_connect_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+D:/Embedded_System_Volume/Esp_IDF_workspace/006_HTTP_Server_connect_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+D:/Embedded_System_Volume/Esp_IDF_workspace/006_HTTP_Server_connect_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

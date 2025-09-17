@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <unistd.h>
+#include "opt3001.h"
+
+// Initialize OPT3001 sensor
+opt3001_handle_t opt3001 = opt3001_create(i2c_port, OPT3001_I2C_ADDR);
+float lux;
+opt3001_get_lux(opt3001, &lux);
+// Use lux value as needed
+void app_main(void)
+{
+    while (true) {
+        printf("Hello from app_main!\n");
+        sleep(1);
+    }
+}

@@ -1,0 +1,55 @@
+Application Vision: Key Points
+Realtime sensing of lux (OPT3001) and UV (GYML8511) values.
+
+Real-Time Clock (RTC): Uses internal ESP32 RTC, calibrated via NTP server once WiFi credentials are set and device is online.
+
+WiFi Configuration: User connects to device, enters SSID + password on a built-in HTML page, device joins WiFi, then syncs time.
+
+Initialization Handling: Device displays "INITIALIZING" on OLED until fully connected and time sync completed, then "CONNECTED" and starts normal operation.
+
+Data Logging: Sensor data (timestamp, lux, UV) logged to external W25Q64 SPI ROM in real-time.
+
+Web Interface: User can download log data (CSV format) with timestamps and readings by connecting to device web server.
+
+Display: OLED always shows current time, lux, and UV in real time.
+
+
+Error Handling: Plan for loss of WiFi, full ROM, sensor faults.
+
+Firmware Update: Optional, but worth planning in modular design for future.
+
+014_LUX_UV_sensor_project_B/
+├── CMakeLists.txt
+├── sdkconfig.defaults
+├── main/
+│   ├── CMakeLists.txt
+│   ├── main.c
+│   ├── components/
+│   │   ├── display/ 
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── display.c
+│   │   │   └── include/
+│   │   │       └── display.h
+│   │   ├── sensors/
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── sensors.c
+│   │   │   └── include/
+│   │   │       └── sensors.h
+│   │   ├── storage/
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── storage.c
+│   │   │   └── include/
+│   │   │       └── storage.h
+│   │   ├── wifi_manager/
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── wifi_manager.c
+│   │   │   └── include/
+│   │   │       └── wifi_manager.h
+│   │   └── web_server/
+│   │       ├── CMakeLists.txt
+│   │       ├── web_server.c
+│   │       └── include/
+│   │           └── web_server.h
+│   └── partitions.csv
+└── data/
+    └── index.html

@@ -1,0 +1,3 @@
+CompileFlags:
+  CompilationDatabase: D:\Embedded_System_Volume\Esp_IDF_workspace\014_LUX_UV_sensor_project_B\build
+  Remove: [-m*, -f*]

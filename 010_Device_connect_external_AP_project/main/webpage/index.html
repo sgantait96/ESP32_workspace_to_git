@@ -1,68 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<script src='jquery-3.3.1.min.js'></script>
-		<link rel="stylesheet" href="app.css">
-		<script async src="app.js"></script>
-		<title>ESP32 Udemy Course</title>
-	</head>
-	<body>
-	<header>
-		<h1>ESP32 Application Development</h1>
-	</header>
-		
-	<div id="OTA">
-	<h2>ESP32 Firmware Update</h2>
-		<label id="latest_firmware_label">Latest Firmware: </label>
-		<div id="latest_firmware"></div> 
-		<input type="file" id="selected_file" accept=".bin" style="display: none;" onchange="getFileInfo()" />
-		<div class="buttons">
-			<input type="button" value="Select File" onclick="document.getElementById('selected_file').click();" />
-			<input type="button" value="Update Firmware" onclick="updateFirmware()" />
-		</div>
-		<h4 id="file_info"></h4>	
-		<h4 id="ota_update_status"></h4>
-	</div>
-	<hr>
-		
-	<div id="DHT22Sensor">
-		<h2>DHT22 Sensor Readings</h2>
-		<label for="temperature_reading">Temperature: </label>
-		<div id="temperature_reading"></div> 
-		<label for="humidity_reading">Humidity: </label>
-		<div id="humidity_reading"></div>
-	</div>
-	<hr>
-		
-	<div id="WiFiConnect">
-		<h2>ESP32 WiFi Connect</h2>
-		<section>
-			<input id="connect_ssid" type="text" maxlength="32" placeholder="SSID" value="">
-			<input id="connect_pass" type="password" maxlength="64" placeholder="Password" value="">
-			<input type="checkbox" onclick="showPassword()">Show Password
-		</section>
-		<div class="buttons">
-			<input id="connect_wifi" type="button" value="Connect" />
-		</div>
-		<div id="wifi_connect_credentials_errors"></div>
-		<h4 id="wifi_connect_status"></h4>
-	</div>
-		
-	<div id="ConnectInfo">
-		<section>
-			<div id="connected_ap_label"></div> <div id="connected_ap"></div>
-		</section>
-		<div id="ip_address_label"></div> <div id="wifi_connect_ip"></div>
-		<div id="netmask_label"></div> <div id="wifi_connect_netmask"></div>
-		<div id="gateway_label"></div> <div id="wifi_connect_gw"></div>
-		<div class="buttons">
-			<input id="disconnect_wifi" type="button" value="Disconnect" />
-		</div>
-	</div>
-	<hr>
-		
-	</body>
-<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>ESP32 Environmental Monitoring Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="app.css"/>
+  <script async src="app.js"></script>
+</head>
+<body>
+  <header>
+    ESP32 Environmental Monitoring Dashboard
+    <p>Live: OTA, WiFi, Sensors & Device Status</p>
+  </header>
+
+  <main class="dashboard">
+    <!-- OTA Update -->
+    <div id="OTA" class="card">
+      <h2>📦 Firmware Update</h2>
+      <p><strong>Latest Firmware:</strong> <span id="latest_firmware">--</span></p>
+      <input type="file" id="selected_file" accept=".bin" style="display: none;" onchange="getFileInfo()"/>
+      <div class="buttons">
+        <button onclick="document.getElementById('selected_file').click();">Select File</button>
+        <button onclick="updateFirmware()">Update Firmware</button>
+      </div>
+      <div id="file_info"></div>	
+      <div id="ota_update_status" class="alert"></div>
+    </div>
+
+    <!-- WiFi Connect -->
+    <div id="WiFiConnect" class="card">
+      <h2>📶 WiFi Connect</h2>
+      <section>
+        <input id="connect_ssid" type="text" maxlength="32" placeholder="SSID"/>
+        <input id="connect_pass" type="password" maxlength="64" placeholder="Password"/>
+        <label><input type="checkbox" onclick="showPassword()"> Show Password</label>
+      </section>
+      <div class="buttons">
+        <button id="connect_wifi">Connect</button>
+      </div>
+      <div id="wifi_connect_credentials_errors"></div>
+      <div id="wifi_connect_status"></div>
+    </div>
+
+    <!-- Connection Info -->
+    <div id="ConnectInfo" class="card">
+      <h2>ℹ️ Connection Info</h2>
+      <p><span id="connected_ap_label"></span><span id="connected_ap"></span></p>
+      <p><span id="ip_address_label"></span><span id="wifi_connect_ip"></span></p>
+      <p><span id="netmask_label"></span><span id="wifi_connect_netmask"></span></p>
+      <p><span id="gateway_label"></span><span id="wifi_connect_gw"></span></p>
+      <div class="buttons">
+        <button id="disconnect_wifi" style="display:none;">Disconnect</button>
+      </div>
+    </div>
+
+    <!-- DHT22 Sensor -->
+    <div id="DHT22Sensor" class="card">
+      <h2>🌡️ Temperature & Humidity</h2>
+      <p>Temperature: <span id="temperature_reading" class="sensor-value">--</span> °C</p>
+      <p>Humidity: <span id="humidity_reading" class="sensor-value">--</span> %</p>
+    </div>
+
+    <!-- Pressure -->
+    <div class="card">
+      <h2>🧭 Pressure</h2>
+      <p>Pressure: <span id="pressure-value" class="sensor-value">--</span> hPa</p>
+    </div>
+
+    <!-- Particulate Matter -->
+    <div class="card">
+      <h2>🟠 Particulate Matter</h2>
+      <table>
+        <thead>
+          <tr><th>PM Type</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PM1</td><td><span id="pm1-value" class="sensor-value">--</span> μg/m³</td></tr>
+          <tr><td>PM2.5</td><td><span id="pm25-value" class="sensor-value">--</span> μg/m³</td></tr>
+          <tr><td>PM10</td><td><span id="pm10-value" class="sensor-value">--</span> μg/m³</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Air Quality -->
+    <div class="card">
+      <h2>🫧 Air Quality</h2>
+      <p>CO₂: <span id="co2-value" class="sensor-value">--</span> ppm</p>
+      <p>CO: <span id="co-value" class="sensor-value">--</span> ppm</p>
+      <p>NO₂: <span id="no2-value" class="sensor-value">--</span> ppm</p>
+      <p>SO₂: <span id="so2-value" class="sensor-value">--</span> ppm</p>
+      <p class="alert" id="aqi-alert"></p>
+    </div>
+
+    <!-- UV & Other Sensors -->
+    <div class="card">
+      <h2>🌞 UV & Other Sensors</h2>
+      <table>
+        <thead>
+          <tr><th>Parameter</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>UV Index</td><td><span id="uv-index-value" class="sensor-value">--</span></td></tr>
+          <tr><td>Light</td><td><span id="light-value" class="sensor-value">--</span> lux</td></tr>
+          <tr><td>Noise</td><td><span id="noise-value" class="sensor-value">--</span> dB</td></tr>
+          <tr><td>Wind Speed</td><td><span id="wind-value" class="sensor-value">--</span> m/s</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Device Status -->
+    <div class="card">
+      <h2>📡 Device Status</h2>
+      <table>
+        <thead>
+          <tr><th>Device ID</th><th>Location</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ENV001</td><td>Lab Main</td><td><span class="status online">Online</span></td></tr>
+          <tr><td>ENV002</td><td>Clean Room</td><td><span class="status online">Online</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 ESP32 Environmental Monitoring System
+  </footer>
+</body>
+</html>
